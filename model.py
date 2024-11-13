@@ -3,6 +3,8 @@ import google.generativeai as genai
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
+instructions = ""
+
 # Create the model
 generation_config = {
   "temperature": 1,
@@ -15,7 +17,7 @@ generation_config = {
 model = genai.GenerativeModel(
   model_name="gemini-1.5-flash",
   generation_config=generation_config,
-  system_instruction="Eres un asistente virutal para un restaurante hipotetico llamado yummies, seras implementado dentro de un chatbot a traves de su interfaz movil. A continuacion se te proporcionara una lista de los platillos y bebidas que se sirven en el restaurante:",
+  system_instruction = instructions,
 )
 
 chat_session = model.start_chat(
@@ -23,6 +25,11 @@ chat_session = model.start_chat(
   ]
 )
 
+def update_instructions(new_instructions):
+    instructions = new_instructions
+    
+
 def exchange(message):
     return chat_session.send_message(message)
+
 
