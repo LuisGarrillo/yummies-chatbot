@@ -16,11 +16,9 @@ def after_request(response):
 
 @app.route("/chatbot", methods=["POST"])
 def chatbot():
-    print("hi")
     client_message = request.get_json(request.get_data)
     response = model.exchange(client_message["input"])
     data = {
         "bot_response": response
     }
-    print("goodbye")
     return jsonify(data)
