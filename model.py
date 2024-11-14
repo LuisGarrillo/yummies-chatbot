@@ -1,9 +1,18 @@
 import os, key
 import google.generativeai as genai
+import meals
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+genai.configure(api_key=os.environ["bot_key"])
 
+
+    
 instructions = ""
+
+def update_instructions(new_instructions):
+    global instructions
+    instructions = new_instructions
+    
+meals.set_instructions()
 
 # Create the model
 generation_config = {
@@ -25,11 +34,7 @@ chat_session = model.start_chat(
   ]
 )
 
-def update_instructions(new_instructions):
-    instructions = new_instructions
-    
-
 def exchange(message):
-    return chat_session.send_message(message)
+    return chat_session.send_message(message).text
 
 
