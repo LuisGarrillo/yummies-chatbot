@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummies Chatbot</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <button class="back-button">&larr;</button>
+            <h1>Yummies Chatbot</h1>
+        </header>
+        <div class="chat-box">
+            <div class="bot-message">
+                <p>Hola!</p>
+            </div>
+        </div>
+        <form class="message-input" id="chat-form">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." required>
+            <button type="submit" id="send-button">
+                <img src="{{ url_for('static', filename='paper-plane-top.png') }}" alt="Enviar" style="width: 30px; height: 30px;">
+            </button>
+        </form>
+    </div>
+    <script src="./static/script.js"></script>
+</body>
+</html>

@@ -36,5 +36,3 @@ chat_session = model.start_chat(
 
 def exchange(message):
     return chat_session.send_message(message).text
-
-

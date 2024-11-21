@@ -1,4 +1,4 @@
-from flask import Flask, flash, redirect, jsonify, request, session, make_response
+from flask import Flask, flash, redirect, jsonify, request, session, make_response, render_template
 import model
 
 app = Flask(__name__)
@@ -13,6 +13,11 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 
 @app.route("/chatbot", methods=["POST"])
 def chatbot():

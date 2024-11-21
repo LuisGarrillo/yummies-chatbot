@@ -1,0 +1,129 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 420px;
+    height: 90vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fefffe;
+    border-bottom: 1px solid #ddd;
+}
+
+header .back-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Chat Box */
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: #f6f7f6;
+}
+
+.bot-message, .user-message {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: #565454;
+    color: #f3f3f3;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #c44c05;
+    color: white;
+}
+
+/* Input Form */
+.message-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #fefffe;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.message-input button {
+    background: #c44c05;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#send-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#send-button img.send-icon {
+    width: 30px;
+    height: 30px;
+    fill: #c44c05;  
+}
+
+
+#send-button img.send-icon:hover {
+    fill: #f57c00; 
+}
